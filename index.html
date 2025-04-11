@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Librería El Búho Sabio</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>📚 El Búho Sabio</h1>
+    <nav>
+      <button onclick="mostrarCategoria('ficcion')">Ficción</button>
+      <button onclick="mostrarCategoria('noFiccion')">No Ficción</button>
+      <button onclick="mostrarCategoria('infantil')">Infantil</button>
+      <button onclick="mostrarCarrito()">🛒 Carrito (<span id="carrito-cantidad">0</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="productos" class="grid"></section>
+    <section id="carrito" class="oculto"></section>
+    <section id="pago" class="oculto">
+      <h2>Formulario de Pago</h2>
+      <form onsubmit="procesarPago(event)">
+        <input type="text" placeholder="Nombre en la tarjeta" required />
+        <input type="text" placeholder="Número de tarjeta" required min="0" maxlength="19" pattern="\d*" title="Por favor, ingresar solo números."/>
+        <input type="text" placeholder="MM/AA" required />
+        <input type="text" placeholder="CVV"/>
+        <button type="submit">Pagar</button>
+      </form>
+    </section>
+  </main> 
+
+  <script src="script.js"></script>
+</body>
+</html>
